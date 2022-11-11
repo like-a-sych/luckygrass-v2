@@ -1,0 +1,228 @@
+<div class="quiz" id="quiz">
+  <div class="quiz__wrapper">
+
+    <form class="needs-validation quiz__form" novalidate="" method="POST" action="thank.php"
+      enctype="multipart/form-data" name="quiz">
+      <div class="step1 active step">
+        <div class="step__block">
+          <div class="step__left">
+            <h3 class="step__title"><span>1/5</span> Где вы проводите матчи?</h3>
+            <div class="step__variants quiz-variants">
+              <div class="quiz-variants__variant" data-step="step2">
+                <input type="radio" name="question-1" id="q-1-1" value="в помещении" required="">
+                <label for="q-1-1" class="quiz-variants__label">
+                  <div class="quiz-variants__question quiz-question">
+                    <div class="quiz-question__label">
+                      в помещении
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div class="quiz-variants__variant" data-step="step2">
+                <input type="radio" name="question-1" id="q-1-2" value="когда как" required="">
+                <label for="q-1-2" class="quiz-variants__label">
+                  <div class="quiz-variants__question quiz-question">
+                    <div class="quiz-question__label">
+                      когда как
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div class="quiz-variants__variant" data-step="step2">
+                <input type="radio" name="question-1" id="q-1-3" value="на улице" required="">
+                <label for="q-1-3" class="quiz-variants__label">
+                  <div class="quiz-variants__question quiz-question">
+                    <div class="quiz-question__label">
+                      на улице
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div class="quiz-variants__variant" data-step="step2">
+                <input type="radio" name="question-1" id="q-1-4" value="затрудняюсь ответить" required="">
+                <label for="q-1-4" class="quiz-variants__label">
+                  <div class="quiz-variants__question quiz-question">
+                    <div class="quiz-question__label">
+                      затрудняюсь ответить
+                    </div>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="step2 step">
+        <div class="step__block">
+          <div class="step__left">
+            <h3 class="step__title"><span>2/5</span> Какое количество формы <nobr>вам необходимо</nobr> заказать?</h3>
+            <div class="step__variants quiz-variants">
+              <div class="quiz-variants__variant" data-step="step3">
+                <input type="radio" name="question-2" id="q-2-1" value="до 5 комплектов" required="">
+                <label for="q-2-1" class="quiz-variants__radio-label">
+                  <div class="quiz-variants__question quiz-question">
+                    <div class="quiz-question__label">
+                      до 5 комплектов
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div class="quiz-variants__variant" data-step="step3">
+                <input type="radio" name="question-2" id="q-2-2" value="от 5-20 комплектов" required="">
+                <label for="q-2-2" class="quiz-variants__radio-label">
+                  <div class="quiz-variants__question quiz-question">
+                    <div class="quiz-question__label">
+                      от 5-20 комплектов
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div class="quiz-variants__variant" data-step="step3">
+                <input type="radio" name="question-2" id="q-2-3" value="больше 20 комплектов" required="">
+                <label for="q-2-3" class="quiz-variants__radio-label">
+                  <div class="quiz-variants__question quiz-question">
+                    <div class="quiz-question__label">
+                      больше 20 комплектов
+                    </div>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="step3 step">
+        <div class="step__block">
+          <div class="step__left">
+            <h3 class="step__title"><span>3/5</span> В какой срок необходимо произвести и доставить форму?</h3>
+            <div class="step__variants quiz-variants">
+              <div class="quiz-variants__variant" data-step="step4">
+                <input type="radio" name="question-3" id="q-3-1" value="за месяц и более" required="">
+                <label for="q-3-1" class="quiz-variants__radio-label">
+                  <div class="quiz-variants__question quiz-question">
+                    <div class="quiz-question__label">
+                      за месяц и более
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div class="quiz-variants__variant" data-step="step4">
+                <input type="radio" name="question-3" id="q-3-2" value="в течение 14-30 дней" required="">
+                <label for="q-3-2" class="quiz-variants__radio-label">
+                  <div class="quiz-variants__question quiz-question">
+                    <div class="quiz-question__label">
+                      в течение 14-30 дней
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div class="quiz-variants__variant" data-step="step4">
+                <input type="radio" name="question-3" id="q-3-3" value=" в течение 7-14 дней" required="">
+                <label for="q-3-3" class="quiz-variants__radio-label">
+                  <div class="quiz-variants__question quiz-question">
+                    <div class="quiz-question__label">
+                      в течение 7-14 дней
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div class="quiz-variants__variant" data-step="step4">
+                <input type="radio" name="question-3" id="q-3-4" value="менее, чем за 7 дней" required="">
+                <label for="q-3-4" class="quiz-variants__radio-label">
+                  <div class="quiz-variants__question quiz-question">
+                    <div class="quiz-question__label">
+                      менее, чем за 7 дней
+                    </div>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="step4 step">
+        <div class="step__block">
+          <div class="step__left">
+            <h3 class="step__title"><span>4/5</span> Вам необходимо разработать дизайн или у вас есть готовое ТЗ?</h3>
+            <div class="step__variants quiz-variants">
+              <div class="quiz-variants__variant" data-step="step5">
+                <input type="radio" name="question-4" id="q-4-1" value="затрудняюсь ответить" required="">
+                <label for="q-4-1" class="quiz-variants__radio-label">
+                  <div class="quiz-variants__question quiz-question">
+                    <div class="quiz-question__label">
+                      затрудняюсь ответить
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div class="quiz-variants__variant" data-step="step5">
+                <input type="radio" name="question-4" id="q-4-2" value="нужно разработать дизайн с учётом пожеланий"
+                  required="">
+                <label for="q-4-2" class="quiz-variants__radio-label">
+                  <div class="quiz-variants__question quiz-question">
+                    <div class="quiz-question__label">
+                      нужно разработать дизайн <br>
+                      <nobr>с учётом</nobr> пожеланий
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div class="quiz-variants__variant" data-step="step5">
+                <input type="radio" name="question-4" id="q-4-3" value="есть готовое ТЗ по дизайну формы" required="">
+                <label for="q-4-3" class="quiz-variants__radio-label">
+                  <div class="quiz-variants__question quiz-question">
+                    <div class="quiz-question__label">
+                      есть готовое ТЗ <br>
+                      <nobr>по дизайну</nobr> формы
+                    </div>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="step5 step">
+        <h3 class="step__title step__title_last"><span>5/5</span> остался последний шаг</h3>
+        <div class="step__callback">
+          <div class="callback__block">
+            <div class="callback__left">
+              <div class="callback__text">
+                <p>Оставьте контакты и получите:</p>
+              </div>
+              <div class="callback__pref">
+                <div class="callback__item">
+                  <div class="section-2__number">
+                    1
+                  </div>
+                  <p>Предварительной расчет стоимости комплекта</p>
+                </div>
+                <div class="callback__item">
+                  <div class="section-2__number">
+                    2
+                  </div>
+                  <p>Бесплатный образец перед оформлением заказа</p>
+                </div>
+                <div class="callback__item">
+                  <div class="section-2__number">
+                    3
+                  </div>
+                  <p>Бесплатную разработку дизайна вашей формы</p>
+                </div>
+              </div>
+            </div>
+            <div class="callback__form">
+              @@include('_form.html', {
+              "addcom": "addcom2",
+              "doload": "doLoad2",
+              "cerror": "cerror2",
+              })
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

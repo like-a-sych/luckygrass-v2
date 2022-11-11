@@ -1,0 +1,782 @@
+// Подключение базовых стилей и модулей
+@import "vars";
+@import "_modules.scss";
+// Подключение стилей общих элементов проекта
+@import "global";
+
+// Подключение стилей отдельных блоков
+@import "./parts/header";
+@import "./parts/footer";
+@import "./parts/modal";
+@import "./parts/quiz";
+
+//header=============================================================
+
+.header {
+  min-height: 96px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+  z-index: 3;
+
+  @media (max-width: (550px)) {
+    background: $mainColor;
+    position: relative;
+    min-height: 120px;
+  }
+  // .header__container
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: em(24);
+    padding-bottom: em(24);
+    @media (max-width: (550px)) {
+      margin-top: 37px;
+    }
+  }
+
+  // .header__logo
+
+  &__logo {
+    max-width: 174px;
+    @include adaptiveValue("max-width", 224, 174, 550, 375, 1);
+  }
+
+  // .header__contacts
+
+  &__contacts {
+  }
+  .btn {
+    cursor: pointer;
+    display: none;
+    @media (max-width: (550px)) {
+      display: block;
+    }
+  }
+}
+.contacts-header {
+  display: flex;
+  gap: em(16);
+  align-items: center;
+  @media (max-width: (550px)) {
+    display: none;
+  }
+  // .contacts-header__contact
+
+  &__contact {
+    text-align: end;
+    color: #fff;
+    a {
+      color: inherit;
+      &:hover {
+        text-decoration: underline;
+        color: inherit;
+      }
+    }
+  }
+
+  // .contacts-header__phone
+
+  &__phone {
+  }
+
+  // .contacts-header__mail
+
+  &__mail {
+    opacity: 0.5;
+  }
+
+  // .contacts-header__callback
+
+  &__callback {
+    height: 48px;
+    flex: 1 0 170px;
+  }
+}
+
+.header-menu {
+  padding: rem(58) rem(42) rem(38);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  // .header-menu__list
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: em(20);
+    flex: 1 1 auto;
+  }
+
+  // .header-menu__list-item
+
+  &__list-item {
+    color: #fff;
+  }
+  // .header-menu__link
+
+  &__link {
+    color: inherit;
+    text-transform: uppercase;
+    font-size: rem(30);
+    line-height: calc(30 / 32 * 100%);
+    font-family: futura;
+  }
+
+  // .header-menu__footer
+
+  &__footer {
+  }
+}
+.footer-mobile {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  // .footer-mobile__socials
+
+  &__socials {
+    display: flex;
+    gap: em(16);
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 34px;
+      height: 34px;
+      background-color: $blue;
+      border-radius: 50%;
+    }
+  }
+
+  // .footer-mobile__phone
+
+  &__phone {
+    margin-top: em(20);
+    color: inherit;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  // .footer-mobile__adress
+
+  &__adress {
+    margin-top: em(8);
+  }
+}
+.offcanvas {
+  background-color: $mainColor;
+  max-width: 300px;
+}
+//header=============================================================
+
+//section-1===================================================================
+.section-1 {
+  padding-top: 0;
+  // .section-1__container
+
+  &__container {
+    @media (min-width: (550px)) {
+      padding: 0;
+      max-width: 100%;
+    }
+  }
+}
+
+.main-slider {
+  @media (max-width: (550px)) {
+    border-radius: 24px;
+  }
+  .main-pagination {
+    bottom: 14px;
+  }
+
+  // .main-slider__pic
+
+  &__pic {
+    padding-bottom: 38.9%;
+    max-height: 560px;
+    min-height: 480px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+.swiper-pagination-bullet {
+  min-width: 12px;
+  height: 12px;
+  background: #ffffff;
+  opacity: 0.25;
+  transform: none;
+}
+.swiper-pagination-bullet-active {
+  opacity: 1;
+}
+//section-1===================================================================
+//section-2===================================================================
+.section-2 {
+  padding-top: em(50);
+  @include adaptiveValue("padding-top", 50, 24);
+  @media (max-width: (550px)) {
+    color: #fff;
+    padding-bottom: 2em;
+  }
+  // .section-2__container
+
+  &__container {
+  }
+
+  // .section-2__main-subtitle
+
+  &__main-subtitle {
+    color: $blue;
+    text-transform: uppercase;
+    font-family: futura;
+    font-size: rem(20);
+    letter-spacing: 0.01em;
+    @include adaptiveValue("font-size", 20, 14);
+  }
+
+  // .section-2__main-title
+
+  &__main-title {
+    margin-top: em(3);
+    font-size: rem(72);
+    line-height: calc(72 / 72 * 100%);
+    letter-spacing: 0.01em;
+    @include adaptiveValue("font-size", 72, 30);
+    @media (max-width: (640px)) {
+      br {
+        display: none;
+      }
+    }
+  }
+
+  // .section-2__list
+
+  &__list {
+    display: flex;
+    gap: em(34);
+    margin-top: em(13);
+    flex-wrap: wrap;
+    @include adaptiveValue("gap", 34, 16);
+    @media (max-width: (630px)) {
+      flex-direction: column;
+    }
+  }
+
+  // .section-2__list-item
+
+  &__list-item {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex: 1 1 auto;
+  }
+
+  // .section-2__number
+
+  &__number {
+    min-width: 32px;
+    height: 32px;
+    background-color: $blue;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: futura;
+    color: #fff;
+    font-size: 20px;
+    &_red {
+      background-color: $red;
+    }
+  }
+
+  // .section-2__text
+
+  &__text {
+    @include adaptiveValue("font-size", 16, 13);
+  }
+
+  // .section-2__video
+
+  &__video {
+    margin-top: em(16);
+    @include adaptiveValue("margin-top", 16, 32);
+    display: flex;
+    align-items: center;
+    gap: em(12);
+    color: $red;
+    @include adaptiveValue("font-size", 16, 13);
+    @media (max-width: (550px)) {
+      color: #fff;
+    }
+    &:hover {
+      color: $red;
+      text-decoration: underline;
+    }
+  }
+
+  // .section-2__buttons
+
+  &__buttons {
+    margin-top: em(48);
+    @include adaptiveValue("margin-top", 48, 32);
+  }
+}
+
+.buttons-block {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(286px, 392px));
+  gap: em(32);
+  @include adaptiveValue("gap", 32, 16);
+  @media (max-width: (920px)) {
+    overflow-x: scroll;
+  }
+
+  // .buttons-block__item
+  &__item {
+    border-radius: 24px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: em(22) em(24) em(20) em(25);
+    height: 164px;
+    @include adaptiveValue("height", 164, 136);
+    position: relative;
+    cursor: pointer;
+    @media (max-width: (920px)) {
+      padding: em(12);
+    }
+    // .buttons-block__item_quiz
+
+    &_quiz {
+      color: #fff;
+      background-color: $blue;
+      path {
+        stroke: #fff;
+      }
+      .buttons-block__subtitle {
+        color: #fff;
+      }
+    }
+  }
+
+  // .buttons-block__title
+
+  &__title {
+    text-align: left;
+  }
+
+  // .buttons-block__subtitle
+
+  &__subtitle {
+    font-size: rem(12);
+    margin-top: em(8);
+    color: $blue;
+    margin-bottom: em(7);
+  }
+
+  // .buttons-block__arrow
+
+  &__arrow {
+    position: absolute;
+    top: em(30);
+    right: em(30);
+  }
+}
+
+//section-2===================================================================
+
+//check-form-btn===================================================================
+$main_delay: 0.7s;
+
+.checking {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  margin: auto;
+  // the following is used to make sure that the label image will be fetched once the page is loaded otherwise you will see the label size change from 0 to the image width when the input is checked
+  background-image: url("../img/check.svg");
+  background-size: 0 0;
+
+  #btn-icon {
+    opacity: 0;
+    position: absolute;
+  }
+
+  #btn-icon:checked ~ label {
+    transition: background-color 1s;
+    transition-delay: $main_delay;
+
+    &::before {
+      border-top-color: #000; // Show borders
+      border-right-color: #000;
+      border-bottom-color: #000;
+
+      transition: border-top-color 0.45s linear, border-right-color 0.45s linear 0.2s,
+        border-bottom-color 0.45s linear 0.3s;
+    }
+
+    &::after {
+      border: 0 solid transparent;
+      border-top: 2px solid #000; // Shows border
+      border-left-width: 2px; // Solid edges, invisible borders
+      border-right-width: 2px; // Solid edges, invisible borders
+      transform: rotate(270deg); // Rotate around circle
+      transition: transform $main_delay linear 0s, border-left-width 0s linear 0.55s; // Solid edge post-rotation
+      animation: pulse $main_delay;
+      animation-delay: $main_delay;
+    }
+    span {
+      width: fit-content;
+      border: 1px solid transparent;
+      color: $white;
+      border-radius: 50%;
+      padding: em(12);
+      &::after {
+        content: url("../img/check.svg");
+        display: flex;
+        align-items: center;
+        border-color: transparent;
+        background-size: 12px;
+        background-position: center;
+        margin: 2px 0 0 1px;
+      }
+    }
+  }
+  // Basic styles
+  label {
+    background: none;
+    border: 0;
+    box-sizing: border-box;
+    text-align: center;
+    cursor: pointer;
+    letter-spacing: 3px;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-rendering: auto;
+    font-size: inherit;
+    font-weight: 600;
+    pointer-events: none;
+    // Required, since we're setting absolute on pseudo-elements
+    position: relative;
+    vertical-align: middle;
+
+    &::before,
+    &::after {
+      box-sizing: inherit;
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+
+    span {
+      width: 48px;
+      border: 2px solid $white;
+      color: $white;
+      border-radius: 40px;
+      padding: 27px 100px;
+      transition: padding 0.3s;
+      &::after {
+        content: attr(data);
+        background-color: transparent;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .spin {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    cursor: pointer;
+    border-radius: 100%;
+    box-shadow: none;
+
+    &::before,
+    &::after {
+      top: 0;
+      left: 0;
+      border-radius: 100%;
+    }
+
+    &::before {
+      border: 2px solid transparent; // We're animating border-color again
+    }
+
+    &::after {
+      border: 0 solid transparent; // Makes border thinner at the edges? I forgot what I was doing
+    }
+  }
+
+  @keyframes pulse {
+    from {
+      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.4);
+    }
+    to {
+      box-shadow: 0 0 0 15px rgba(0, 0, 0, 0);
+    }
+  }
+}
+//check-form-btn===================================================================
+//section-3===================================================================
+.section-3 {
+  @media (max-width: (580px)) {
+    background-color: #f2f2f2;
+    border-radius: 16px 16px 0 0;
+    padding-top: em(24);
+  }
+  // .section-3__container
+
+  &__container {
+  }
+
+  // .section-3__main-title
+
+  &__main-title {
+  }
+
+  // .section-3__block
+
+  &__block {
+    margin-top: em(30);
+  }
+}
+
+.card-block {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(286px, 392px));
+  gap: em(32);
+  @include adaptiveValue("gap", 32, 16);
+  @media (max-width: (1260px)) {
+    overflow-x: scroll;
+    grid-auto-flow: column;
+  }
+  // grid-auto-flow: column;
+
+  .swiper-pagination {
+    margin-bottom: -4px;
+  }
+  .swiper-button-next {
+    background-image: url(../img/section-3/forward.svg);
+    font-size: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    &::after {
+      display: none;
+    }
+  }
+  .swiper-button-prev {
+    background-image: url(../img/section-3/back.svg);
+    font-size: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    &::after {
+      display: none;
+    }
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  // .card-block__column
+
+  &__column {
+    border-radius: 32px;
+    overflow: hidden;
+    background-color: #fff;
+    min-width: 286px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    min-height: 0;
+    height: 100%;
+  }
+
+  // .card-block__carousel
+
+  &__carousel {
+    width: 100%;
+    &:hover {
+      transition: all 0.4s;
+      .swiper-button-next,
+      .swiper-button-prev {
+        transition: all 0.4s;
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+  .swiper-button-disabled {
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+  // .card-block__info
+
+  &__info {
+    flex: 1 1 auto;
+  }
+  &__wrapper {
+    position: relative;
+    padding: em(24);
+    @include adaptiveValue("padding", 24, 16);
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+  }
+  // .card-block__subtitle
+
+  &__subtitle {
+    opacity: 0.5;
+    @include adaptiveValue("font-size", 16, 13);
+    &_desktop {
+      @media (max-width: (992px)) {
+        display: none;
+      }
+    }
+    &_mobile {
+      display: none;
+      @media (max-width: (992px)) {
+        display: block;
+      }
+    }
+  }
+
+  // .card-block__title
+
+  &__title {
+    text-transform: uppercase;
+    font-family: futura;
+    font-size: rem(44);
+    line-height: calc(48 / 44 * 100%);
+    margin: em(2) 0;
+    @include adaptiveValue("font-size", 44, 30);
+  }
+
+  // .card-block__about-uniform
+
+  &__about-uniform {
+    p {
+      @include adaptiveValue("font-size", 16, 13);
+      &:not(:last-child) {
+        margin-bottom: em(8);
+      }
+    }
+  }
+
+  // .card-block__button
+
+  &__button {
+    margin-top: 1em;
+    height: 48px;
+    ._main-btn:hover {
+      background-color: $blue;
+      color: #fff;
+    }
+  }
+  //card-block__slide
+  &__slide {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 480px;
+    @include adaptiveValue("height", 480, 360);
+    &:hover {
+      body {
+        background-color: red;
+      }
+      .swiper-button-next,
+      .swiper-button-prev {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+//section-3===================================================================
+
+//section-4===================================================================
+
+.section-4 {
+  // .section-4__container
+
+  &__container {
+  }
+
+  // .section-4__main-title
+
+  &__main-title {
+  }
+
+  // .section-4__main-subtitle
+
+  &__main-subtitle {
+    color: $blue;
+    font-size: rem(12);
+    line-height: calc(12 / 12 * 100%);
+  }
+
+  // .section-4__design
+
+  &__design {
+  }
+
+  // .section-4__button
+
+  &__button {
+  }
+}
+
+.swiper-wrapper {
+}
+.design-block {
+  // .design-block__item
+
+  &__item {
+    position: relative;
+    padding-bottom: 50%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 2em;
+    @media (max-width: (550px)) {
+      max-width: 252px;
+    }
+  }
+
+  // .design-block__name
+
+  &__name {
+    background-color: #0066ff;
+    border-radius: 10px;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: rem(11);
+    line-height: calc(12 / 11 * 100%);
+    position: absolute;
+    top: em(16);
+    left: em(16);
+  }
+}
+
+//section-4===================================================================
