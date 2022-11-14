@@ -51,7 +51,8 @@
 }
 
 //callback===================================================================
-#callback {
+#callback,
+#callback-design {
   .modal-dialog {
     max-width: 970px;
     @media (max-width: (835px)) {

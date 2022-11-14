@@ -41,6 +41,14 @@ html {
   }
   &_black {
     background-color: $mainColor;
+    color: #fff;
+    &:hover {
+      background-color: $blue;
+    }
+  }
+  &_blue {
+    background-color: $blue;
+    color: #fff;
   }
 }
 
@@ -58,6 +66,12 @@ html {
   line-height: calc(32 / 30 * 100%);
   text-transform: uppercase;
   @include adaptiveValue("font-size", 30, 24);
+}
+._card-title {
+  font-family: futura;
+  font-size: rem(24);
+  line-height: calc(24 / 24 * 100%);
+  text-transform: uppercase;
 }
 .hide-check {
   visibility: hidden;
@@ -85,6 +99,12 @@ html {
 }
 section {
   padding-top: em(102);
+  @include adaptiveValue("padding-top", 102, 48);
+  @media (max-width: (
+        550px,
+      )) {
+    background-color: $gray;
+  }
 }
 .overflow__container {
   @media (max-width: (550px)) {

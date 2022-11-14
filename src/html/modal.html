@@ -39,6 +39,56 @@
             "addcom": "addcom1",
             "doload": "doLoad1",
             "cerror": "cerror1",
+            "button": "Рассчитать стоимость"
+            })
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="callback-design" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <button type="button" class="close btn-close" data-bs-dismiss="modal" aria-label="Close">
+        <img src="@img/close.svg" alt="Закрыть">
+      </button>
+      <div class="modal-body callback">
+        <h2 class="callback__title _main-title">
+          Получить каталог дизайнов
+        </h2>
+        <div class="callback__block">
+          <div class="callback__left">
+            <div class="callback__text">
+              <p>Звоните <a href="tel:+74998774641">+7 (499) 877-46-41</a>
+                <nobr>или оставьте</nobr> заявку.
+              </p>
+              <p> Дарим подарки <nobr>к
+                  каждому</nobr>
+                заказу.</p>
+            </div>
+            <div class="callback__pref">
+              <div class="callback__item">
+                <div class="section-2__number">
+                  1
+                </div>
+                <p>Бесплатная разработка дизайна формы</p>
+              </div>
+              <div class="callback__item">
+                <div class="section-2__number">
+                  2
+                </div>
+                <p>Бесплатный образец перед оформлением заказа</p>
+              </div>
+            </div>
+          </div>
+          <div class="callback__form">
+            @@include('_parts/_form.html', {
+            "addcom": "addcom3",
+            "doload": "doLoad3",
+            "cerror": "cerror3",
+            "button": "Получить каталог"
             })
           </div>
         </div>

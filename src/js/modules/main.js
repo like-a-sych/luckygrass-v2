@@ -120,11 +120,11 @@ Swiper.use([Navigation, Pagination, Autoplay]);
 
 
 const swiper = new Swiper(".main-slider", {
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: false,
-    pauseOnMouseEnter: true,
-  },
+  // autoplay: {
+  //   delay: 3000,
+  //   disableOnInteraction: false,
+  //   pauseOnMouseEnter: true,
+  // },
   initialSlide: 1,
   pagination: {
     el: ".main-pagination",
@@ -186,6 +186,11 @@ function swiperCard() {
         },
         breakpoints: {
           550: {
+            slidesPerView: 2,
+            spaceBetween: 16,
+            centeredSlides: false,
+          },
+          992: {
             slidesPerView: 3,
             spaceBetween: 32,
             centeredSlides: false,
