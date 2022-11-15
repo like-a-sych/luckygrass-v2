@@ -114,10 +114,10 @@ $mail->Body = $body;
 
 
 /*
-$token = "5520177133:AAFYEQ7mPsL2QRyxjUdbKfviayFwJm_gO3o";
+$token = "";
 
 //Сюда вставляем chat_id
-$chat_id = "-1001614941027";
+$chat_id = "-000000";
 
 
 //Собираем в массив то, что будет передаваться боту
