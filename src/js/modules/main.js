@@ -198,6 +198,13 @@ function swiperCard() {
         }
 
       });
+      const reviews = new Swiper(".reviews-modal", {
+
+        navigation: {
+          nextEl: ".reviews-next",
+          prevEl: ".reviews-prev",
+        },
+      });
     }
   } else if (init) {
     design.destroy();
@@ -206,3 +213,5 @@ function swiperCard() {
 }
 swiperCard();
 window.addEventListener("resize", swiperCard);
+
+

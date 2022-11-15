@@ -96,6 +96,99 @@
     </div>
   </div>
 </div>
+<div class="modal fade" id="callback-tour" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <button type="button" class="close btn-close" data-bs-dismiss="modal" aria-label="Close">
+        <img src="@img/close.svg" alt="Закрыть">
+      </button>
+      <div class="modal-body callback">
+        <h2 class="callback__title _main-title">
+          Получить каталог дизайнов
+        </h2>
+        <div class="callback__block">
+          <div class="callback__left">
+            <div class="callback__text">
+              <p>Звоните <a href="tel:+74998774641">+7 (499) 877-46-41</a>
+                <nobr>или оставьте</nobr> заявку.
+              </p>
+              <p> Дарим подарки <nobr>к
+                  каждому</nobr>
+                заказу.</p>
+              <p>Покажем производство, материалы и готовые комплекты в нашем шоу-руме с понедельника по пятницу,
+                <br>10:00
+                — 19:00, по предварительной записи
+              </p>
+            </div>
+            <div class="callback__important">
+              При себе необхоимо иметь паспорт!
+            </div>
+
+          </div>
+          <div class="callback__form">
+            @@include('_parts/_form.html', {
+            "addcom": "addcom4",
+            "doload": "doLoad4",
+            "cerror": "cerror4",
+            "button": "Записаться на экскурсию"
+            })
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="reviews" tabindex=" -1" aria-labelledby="exampleModalLabel" style="display: none;"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <button type="button" class="close btn-close" data-bs-dismiss="modal" aria-label="Close">
+        <img src="@img/close.svg" alt="Закрыть">
+      </button>
+      <div class="modal-body callback reviews-modal">
+        <h2 class="callback__title _main-title">
+          Отзывы о нашей работе
+        </h2>
+        <div class="reviews-modal swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide reviews-modal__item">
+              <img src="@img/reviews/rev1.jpg" alt="">
+              <a href="##" class="reviews-modal__link">Смотреть полный отзыв </a>
+            </div>
+            <div class="swiper-slide reviews-modal__item">
+              <img src="@img/reviews/rev1.jpg" alt="">
+              <a href="##" class="reviews-modal__link">Смотреть полный отзыв </a>
+            </div>
+            <div class="swiper-slide reviews-modal__item">
+              <img src="@img/reviews/rev1.jpg" alt="">
+              <a href="##" class="reviews-modal__link">Смотреть полный отзыв </a>
+            </div>
+            <div class="swiper-slide reviews-modal__item">
+              <img src="@img/reviews/rev1.jpg" alt="">
+              <a href="##" class="reviews-modal__link">Смотреть полный отзыв </a>
+            </div>
+            <div class="swiper-slide reviews-modal__item">
+              <img src="@img/reviews/rev1.jpg" alt="">
+              <a href="##" class="reviews-modal__link">Смотреть полный отзыв </a>
+            </div>
+            <div class="swiper-slide reviews-modal__item">
+              <img src="@img/reviews/rev1.jpg" alt="">
+              <a href="##" class="reviews-modal__link">Смотреть полный отзыв </a>
+            </div>
+            <div class="swiper-slide reviews-modal__item">
+              <img src="@img/reviews/rev1.jpg" alt="">
+              <a href="##" class="reviews-modal__link">Смотреть полный отзыв </a>
+            </div>
+
+          </div>
+          <div class="reviews-next swiper-button-next"></div>
+          <div class="reviews-prev swiper-button-prev"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="modal fade" id="quiz-modal" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;"
   aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">

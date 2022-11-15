@@ -52,7 +52,8 @@
 
 //callback===================================================================
 #callback,
-#callback-design {
+#callback-design,
+#callback-tour {
   .modal-dialog {
     max-width: 970px;
     @media (max-width: (835px)) {
@@ -90,6 +91,7 @@
   // .callback__text
 
   &__text {
+    max-width: 528px;
     p {
       @media (max-width: (550px)) {
         display: contents;
@@ -111,6 +113,15 @@
     display: flex;
     flex-direction: column;
     gap: em(12);
+  }
+  // .callback__important
+  &__important {
+    margin-top: 24px;
+    font-size: rem(30);
+    line-height: calc(32 / 30 * 100%);
+    text-transform: uppercase;
+    color: $blue;
+    font-family: futura;
   }
 
   // .callback__item
@@ -303,3 +314,90 @@
   }
 }
 //quiz-modal===================================================================
+
+//reviews-modal===================================================================
+#reviews {
+  .modal-dialog {
+    max-width: 960px;
+  }
+  .modal-dialog {
+    @media (max-width: (550px)) {
+      min-height: 80vh;
+    }
+  }
+}
+
+.reviews-modal {
+  margin-top: em(24);
+  @media (max-width: (768px)) {
+    margin-top: 0;
+  }
+  @media (max-width: (550px)) {
+    margin-top: em(10);
+  }
+  // .reviews-modal__item
+
+  &__item {
+    border-radius: 2em;
+  }
+
+  // .reviews-modal__link
+
+  &__link {
+    margin-top: em(24);
+    display: flex;
+    color: $blue;
+    max-width: 210px;
+    @media (max-width: (550px)) {
+      margin-top: em(10);
+    }
+    &:hover {
+      text-decoration: underline;
+      color: $blue;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+    }
+  }
+
+  .swiper {
+  }
+  .swiper-wrapper {
+    @media (max-width: (550px)) {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+  .reviews-prev,
+  .reviews-next {
+    background-color: $gray;
+    border-radius: 16px;
+    width: 48px;
+    height: 48px;
+    background-size: 24px;
+    background-repeat: no-repeat;
+    background-position: center;
+    &::after {
+      display: none;
+    }
+    @media (max-width: (550px)) {
+      display: none;
+    }
+  }
+  .reviews-next {
+    background-image: url(../img/designs/arrow_f.svg);
+    right: 0px;
+    &:hover {
+      background-image: url(../img/designs/arrowf.svg);
+    }
+  }
+  .reviews-prev {
+    background-image: url(../img/designs/arrow_b.svg);
+    left: 0px;
+    &:hover {
+      background-image: url(../img/designs/arrowb.svg);
+    }
+  }
+}
+
+//reviews-modal===================================================================
