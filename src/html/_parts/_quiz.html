@@ -1,8 +1,8 @@
 <div class="quiz" id="quiz">
   <div class="quiz__wrapper">
 
-    <form class="needs-validation quiz__form" novalidate="" method="POST" action="thank.php"
-      enctype="multipart/form-data" name="quiz">
+    <form class="needs-validation quiz__form form" novalidate="" method="POST" action="#" enctype="multipart/form-data"
+      name="addcom2" id="addcom2" onsubmit="return false">
       <div class="step1 active step">
         <div class="step__block">
           <div class="step__left">
@@ -59,7 +59,7 @@
             <div class="step__variants quiz-variants">
               <div class="quiz-variants__variant" data-step="step3">
                 <input type="radio" name="question-2" id="q-2-1" value="до 5 комплектов" required="">
-                <label for="q-2-1" class="quiz-variants__radio-label">
+                <label for="q-2-1" class="quiz-variants__label">
                   <div class="quiz-variants__question quiz-question">
                     <div class="quiz-question__label">
                       до 5 комплектов
@@ -69,7 +69,7 @@
               </div>
               <div class="quiz-variants__variant" data-step="step3">
                 <input type="radio" name="question-2" id="q-2-2" value="от 5-20 комплектов" required="">
-                <label for="q-2-2" class="quiz-variants__radio-label">
+                <label for="q-2-2" class="quiz-variants__label">
                   <div class="quiz-variants__question quiz-question">
                     <div class="quiz-question__label">
                       от 5-20 комплектов
@@ -79,7 +79,7 @@
               </div>
               <div class="quiz-variants__variant" data-step="step3">
                 <input type="radio" name="question-2" id="q-2-3" value="больше 20 комплектов" required="">
-                <label for="q-2-3" class="quiz-variants__radio-label">
+                <label for="q-2-3" class="quiz-variants__label">
                   <div class="quiz-variants__question quiz-question">
                     <div class="quiz-question__label">
                       больше 20 комплектов
@@ -98,7 +98,7 @@
             <div class="step__variants quiz-variants">
               <div class="quiz-variants__variant" data-step="step4">
                 <input type="radio" name="question-3" id="q-3-1" value="за месяц и более" required="">
-                <label for="q-3-1" class="quiz-variants__radio-label">
+                <label for="q-3-1" class="quiz-variants__label">
                   <div class="quiz-variants__question quiz-question">
                     <div class="quiz-question__label">
                       за месяц и более
@@ -108,7 +108,7 @@
               </div>
               <div class="quiz-variants__variant" data-step="step4">
                 <input type="radio" name="question-3" id="q-3-2" value="в течение 14-30 дней" required="">
-                <label for="q-3-2" class="quiz-variants__radio-label">
+                <label for="q-3-2" class="quiz-variants__label">
                   <div class="quiz-variants__question quiz-question">
                     <div class="quiz-question__label">
                       в течение 14-30 дней
@@ -118,7 +118,7 @@
               </div>
               <div class="quiz-variants__variant" data-step="step4">
                 <input type="radio" name="question-3" id="q-3-3" value=" в течение 7-14 дней" required="">
-                <label for="q-3-3" class="quiz-variants__radio-label">
+                <label for="q-3-3" class="quiz-variants__label">
                   <div class="quiz-variants__question quiz-question">
                     <div class="quiz-question__label">
                       в течение 7-14 дней
@@ -128,7 +128,7 @@
               </div>
               <div class="quiz-variants__variant" data-step="step4">
                 <input type="radio" name="question-3" id="q-3-4" value="менее, чем за 7 дней" required="">
-                <label for="q-3-4" class="quiz-variants__radio-label">
+                <label for="q-3-4" class="quiz-variants__label">
                   <div class="quiz-variants__question quiz-question">
                     <div class="quiz-question__label">
                       менее, чем за 7 дней
@@ -147,7 +147,7 @@
             <div class="step__variants quiz-variants">
               <div class="quiz-variants__variant" data-step="step5">
                 <input type="radio" name="question-4" id="q-4-1" value="затрудняюсь ответить" required="">
-                <label for="q-4-1" class="quiz-variants__radio-label">
+                <label for="q-4-1" class="quiz-variants__label">
                   <div class="quiz-variants__question quiz-question">
                     <div class="quiz-question__label">
                       затрудняюсь ответить
@@ -158,7 +158,7 @@
               <div class="quiz-variants__variant" data-step="step5">
                 <input type="radio" name="question-4" id="q-4-2" value="нужно разработать дизайн с учётом пожеланий"
                   required="">
-                <label for="q-4-2" class="quiz-variants__radio-label">
+                <label for="q-4-2" class="quiz-variants__label">
                   <div class="quiz-variants__question quiz-question">
                     <div class="quiz-question__label">
                       нужно разработать дизайн <br>
@@ -169,7 +169,7 @@
               </div>
               <div class="quiz-variants__variant" data-step="step5">
                 <input type="radio" name="question-4" id="q-4-3" value="есть готовое ТЗ по дизайну формы" required="">
-                <label for="q-4-3" class="quiz-variants__radio-label">
+                <label for="q-4-3" class="quiz-variants__label">
                   <div class="quiz-variants__question quiz-question">
                     <div class="quiz-question__label">
                       есть готовое ТЗ <br>
@@ -214,12 +214,37 @@
               </div>
             </div>
             <div class="callback__form">
-              @@include('_form.html', {
-              "addcom": "addcom2",
-              "doload": "doLoad2",
-              "cerror": "cerror2",
-              "button": "Рассчитать стоимость"
-              })
+              <input type="hidden" name="from" value="Рассчитать стоимость">
+              <input type="hidden" name="token" value="<?php echo(rand(10000,99999));?>" />
+              <input type="hidden" id="fr" name="fr" value="">
+              <div class="err" id="cerror2"></div>
+              <div class="main-form__wrapper">
+                <div class="main-form__item">
+                  <div class="main-form__field">
+                    <input type="tel" class="main-form__input form-control" name="phone"
+                      placeholder="+7 (000) 000-00-00" required="">
+                  </div>
+                </div>
+                <div class="main-form__item">
+                  <div class="main-form__button">
+                    <div class="checking">
+                      <input type="checkbox" class="check-input" id="btn-icon" />
+                      <label for="btn-icon" class="spin hide-check">
+                        <span data="finish"></span>
+                      </label>
+                    </div>
+                    <button disabled onclick="doLoad2(document.getElementById('addcom2'))"
+                      class="_main-btn _main-btn_gray form-btn">
+                      Рассчитать стоимость
+                    </button>
+                  </div>
+                </div>
+                <div class="main-form__item">
+                  <p>Нажимая «Перезвоните мне» вы соглашаетесь <br>
+                    <nobr>на обработку</nobr> персональных данных
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -2,7 +2,9 @@
 //=============================================================================================
 import "./modules/jquery.touchSwipe.min.js";
 // подключение boostrap
-import 'bootstrap';
+// import 'bootstrap';
+import { Modal, Offcanvas, Tab } from 'bootstrap';
+
 // jqueryMaskdinput
 import "./modules/jquery.maskedinput.js";
 // Глобальный файл скриптов
@@ -23,8 +25,7 @@ timer.timer();
 // подключение fancybox
 import { Fancybox } from "@fancyapps/ui";
 
-
-
-
-
 import "./modules/main.js";
+
+
+

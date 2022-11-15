@@ -32,41 +32,38 @@ $(document).ready(function () {
 //Анимация кнопки
 $(function () {
   $(".form-btn").click(function () {
-    if ($(this).attr('disabled', true)) {
-      $(this).addClass('hide-btn');
-      $(".spin").removeClass('hide-check');
-      $(".check-input").attr('checked', true);
-      $(".check-input").attr('disabled', true);
-      $(".form-control").attr('disabled', true);
-    }
+    $(this).addClass('hide-btn');
+    $(this).closest(".form").find(".spin").removeClass('hide-check');
+    $(this).closest(".form").find(".check-input").attr('checked', true);
+    $(this).closest(".form").find(".check-input").attr('disabled', true);
   });
 });
 
 
-var animationTiming = 500;
+// var animationTiming = 500;
 
-/* Add the class effect on button */
-$('.button-effect').on('click', function (e) {
-  e.preventDefault();
-  var self = $(this),
-    /* Get the width of button (if different buttons types) */
-    btnWidth = self.outerWidth(),
-    x = e.offsetX,
-    y = e.offsetY;
+// /* Add the class effect on button */
+// $('.button-effect').on('click', function (e) {
+//   e.preventDefault();
+//   var self = $(this),
+//     /* Get the width of button (if different buttons types) */
+//     btnWidth = self.outerWidth(),
+//     x = e.offsetX,
+//     y = e.offsetY;
 
-  self.prepend('<span class="effect-wave"></span>');
+//   self.prepend('<span class="effect-wave"></span>');
 
-  $('.effect-wave')
-    .css({ 'top': y, 'left': x })
-    .animate({
-      opacity: '0',
-      width: btnWidth * 2,
-      height: btnWidth * 2
-    }, animationTiming, function () {
-      self.find('.effect-wave').remove();
-    })
+//   $('.effect-wave')
+//     .css({ 'top': y, 'left': x })
+//     .animate({
+//       opacity: '0',
+//       width: btnWidth * 2,
+//       height: btnWidth * 2
+//     }, animationTiming, function () {
+//       self.find('.effect-wave').remove();
+//     })
 
-})
+// })
 
 $(".card-block__column").on("click", ".btn-uni", function () {
   var e = String('Рассчитать стоисость для: ' + $(this).data("uniform"));
@@ -79,40 +76,46 @@ $(".card-block__column").on("click", ".btn-uni", function () {
 //ПЛАВНЫЙ СКРОЛЛ К ЯКОРЯМ
 
 // Select all links with hashes
-$('.to-anchor')
-  .click(function (event) {
-    $('#offcanvasRight').offcanvas('hide');
+$('.to-anchor').click(function (event) {
+  $('#offcanvasRight').offcanvas('hide');
+  $('.modal').modal('hide');
 
-    // On-page links
-    if (
-      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
-      &&
-      location.hostname == this.hostname
-    ) {
-      // Figure out element to scroll to
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-      // Does a scroll target exist?
-      if (target.length) {
-        // Only prevent default if animation is actually gonna happen
-        event.preventDefault();
-        $('html, body').animate({
-          scrollTop: target.offset().top - 50
-        }, 500, function () {
-          // Callback after animation
-          // Must change focus!
-          var $target = $(target);
-          $target.focus();
-          if ($target.is(":focus")) { // Checking if the target was focused
-            return false;
-          } else {
-            $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
-            $target.focus(); // Set focus again
-          };
-        });
-      }
+  // On-page links
+  if (
+    location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+    &&
+    location.hostname == this.hostname
+  ) {
+    // Figure out element to scroll to
+    var target = $(this.hash);
+    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+    // Does a scroll target exist?
+    if (target.length) {
+      // Only prevent default if animation is actually gonna happen
+      event.preventDefault();
+      $('html, body').animate({
+        scrollTop: target.offset().top - 50
+      }, 500, function () {
+        // Callback after animation
+        // Must change focus!
+        var $target = $(target);
+        $target.focus();
+        if ($target.is(":focus")) { // Checking if the target was focused
+          return false;
+        } else {
+          $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
+          $target.focus(); // Set focus again
+        };
+      });
     }
-  });
+  }
+});
+
+$('.form-btn').click(function () {
+  setTimeout(function () {
+    $('#thankyou').modal('show');
+  }, 1000)
+})
 
 // подключение swiper
 import Swiper, { Navigation, Pagination, Autoplay } from 'swiper';

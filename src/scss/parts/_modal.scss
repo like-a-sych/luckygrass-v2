@@ -146,12 +146,11 @@
       flex: 1 1 100%;
     }
   }
-  .form-btn {
-    position: relative;
-    z-index: 2;
-  }
 }
-
+.form-btn {
+  position: relative;
+  z-index: 2;
+}
 .main-form {
   // .main-form__wrapper
 
@@ -271,7 +270,11 @@
     background-size: cover;
     background-position: center;
     border-radius: 32px;
+    border: 2px solid transparent;
     @include adaptiveValue("border-radius", 32, 16);
+    &:hover {
+      border-color: $mainColor;
+    }
   }
 
   // .thankyou__page-name
