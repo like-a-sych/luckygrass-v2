@@ -314,6 +314,9 @@
     @media (max-width: (768px)) {
       padding: 16px;
     }
+    @media (max-width: (550px)) {
+      min-height: 400px;
+    }
   }
 }
 //quiz-modal===================================================================

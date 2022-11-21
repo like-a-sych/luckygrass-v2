@@ -210,7 +210,8 @@ function swiperCard() {
       });
     }
   } else if (init) {
-    design.destroy();
+    // design.destroy();
+    // reviews.destroy();
     init = false;
   }
 }

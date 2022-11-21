@@ -49,6 +49,9 @@ html {
   &_blue {
     background-color: $blue;
     color: #fff;
+    &:hover {
+      background-color: #005dbc;
+    }
   }
 }
 
